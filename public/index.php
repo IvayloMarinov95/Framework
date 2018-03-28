@@ -6,5 +6,4 @@ use MVC\App;
 
 $app = App::getInstance();
 
-
 $app->run();

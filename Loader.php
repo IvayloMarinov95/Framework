@@ -21,11 +21,11 @@ final class Loader{
         foreach(self::$namespaces as $k =>$v){
             if(strpos($class, $k)===0){
 
-                $file = realpath(substr_replace(str_replace('\\', DIRECTORY_SEPARATOR, $class), $v,0, \strlen($k)) . '.php');
+                $file = realpath(substr_replace(str_replace('\\', DIRECTORY_SEPARATOR, $class), $v,0, strlen($k)) . '.php');
                 if($file && is_readable($file)){
                     include $file;
                 } else {
-                    throw new \Exception('File cannot be include:' . $file);
+                    throw new \Exception('File cannot be included:' . $file);
                 }
                 break;
                 
